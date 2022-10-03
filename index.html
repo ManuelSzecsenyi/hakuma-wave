@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sine Wave</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas></canvas>
+
+</body>
+
+<script>
+    const canvas = document.querySelector('canvas')
+    const c = canvas.getContext('2d')
+    canvas.width = innerWidth
+    canvas.height = innerHeight
+    
+    const wave = {
+        offset: 400,
+        speed: 0.2,
+        amplitude: 2,
+        frequency: 5,
+    } 
+    
+    var disFreq = wave.frequency, disFreqChase = 0;
+    var disAmp = wave.amplitude, disAmpChase = 0;
+    var disY = wave.offset, disYChase = 0;
+    var disSp = wave.speed, disSpChase = 0;
+
+    const strokeColor = { width: 0, h: 200, s: 50, l: 50, a: 0 }
+    const backgroundColor = { r: 192, g: 213, b: 180, a: 1 }
+
+    let increment = 0
+
+    function drawSineWave() {
+
+        // smooth out changes
+        disFreq += disFreqChase = (disFreqChase += (wave.frequency - disFreq) * 0.2) * 0.2;
+        disAmp += disAmpChase = (disAmpChase += (wave.amplitude - disAmp) * 0.2) * 0.2;
+        disY += disYChase = (disYChase += (wave.offset - disY) * 0.2) * 0.2;
+        disSp += disSpChase = (disSpChase += (wave.speed - disSp) * 0.2) * 0.2;
+
+        c.lineWidth = strokeColor.width;
+        c.fillStyle = `rgba(${backgroundColor.r},${backgroundColor.g},${backgroundColor.b},${backgroundColor.a})`
+        c.clearRect(0, 0, canvas.width, canvas.height)
+        //increment++
+
+        increment += (disSp / 60);
+        c.beginPath()
+        const h = canvas.height;
+        for (let i = 0; i < canvas.width; i++) {
+            const a = (disAmp / 200) * h;
+            const x = ((i / canvas.width) * disFreq) % 1 + increment;
+            const p = x * Math.PI * 2;
+            c.lineTo(i, disY + Math.sin(p) * a);
+        }
+
+        c.strokeStyle = `rgba(${backgroundColor.r},${backgroundColor.g},${backgroundColor.b},${backgroundColor.a})`
+        c.stroke()
+        c.lineTo(canvas.width, canvas.height)
+        c.lineTo(0, canvas.height)
+        c.fill()
+    }
+
+
+    function animate() {
+
+        requestAnimationFrame(animate)
+        drawSineWave()
+
+    }
+
+    animate()
+</script>
+
+</html>
