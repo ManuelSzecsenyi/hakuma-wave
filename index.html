@@ -10,81 +10,141 @@
             box-sizing: border-box;
         }
 
-        canvas {
+        .animates-wave-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 500px;
             width: 100%;
-            height: 100%;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            filter: drop-shadow(0px 0px 20px rgb(0 0 0 / 0.2));
+        }
+
+        .wave-1 {
+            top: 40px;
+            animation: wave-invert linear 4s infinite;
+        }
+
+        .wave-2 {
+            top: 80px;
+            animation: wave linear 4s infinite;
+        }
+
+        .wave-3 {
+            top: 120px;
+            animation: wave-invert linear 4s infinite;
+        }
+
+        .wave-4 {
+            top: 160px;
+            animation: wave linear 4s infinite;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes wave-invert {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <canvas></canvas>
+
+
+
+    <div class="animates-wave-wrapper">
+
+        <svg class="wave-1" version="1.1" id="Ebene_2_00000023994356195402159460000012843433409337631111_"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 764.5 108.8" style="enable-background:new 0 0 764.5 108.8;" xml:space="preserve">
+            <style type="text/css">
+                .st0 {
+                    fill: #EB5D0B;
+                }
+            </style>
+            <g id="Ebene_1-2">
+                <g>
+                    <path class="st0" d="M764.5,25C716.8,25,716.8,7.2,669,7.2S621.2,25,573.5,25S525.8,7.2,478,7.2S430.2,25,382.5,25
+			S334.8,7.2,287,7.2S239.2,25,191.5,25C143.8,25,143.8,7.2,96,7.2S48.2,25,0.5,25" />
+                    <rect y="25" class="st0" width="764" height="83.8" />
+                </g>
+            </g>
+        </svg>
+
+        <svg class="wave-2" version="1.1" id="Ebene_2_00000023994356195402159460000012843433409337631111_"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 764.5 108.8" style="enable-background:new 0 0 764.5 108.8;" xml:space="preserve">
+            <style type="text/css">
+                .st0 {
+                    fill: #EB5D0B;
+                }
+            </style>
+            <g id="Ebene_1-2">
+                <g>
+                    <path class="st0" d="M764.5,25C716.8,25,716.8,7.2,669,7.2S621.2,25,573.5,25S525.8,7.2,478,7.2S430.2,25,382.5,25
+			S334.8,7.2,287,7.2S239.2,25,191.5,25C143.8,25,143.8,7.2,96,7.2S48.2,25,0.5,25" />
+                    <rect y="25" class="st0" width="764" height="83.8" />
+                </g>
+            </g>
+        </svg>
+
+        <svg class="wave-3" version="1.1" id="Ebene_2_00000023994356195402159460000012843433409337631111_"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 764.5 108.8" style="enable-background:new 0 0 764.5 108.8;" xml:space="preserve">
+            <style type="text/css">
+                .st0 {
+                    fill: #EB5D0B;
+                }
+            </style>
+            <g id="Ebene_1-2">
+                <g>
+                    <path class="st0" d="M764.5,25C716.8,25,716.8,7.2,669,7.2S621.2,25,573.5,25S525.8,7.2,478,7.2S430.2,25,382.5,25
+			S334.8,7.2,287,7.2S239.2,25,191.5,25C143.8,25,143.8,7.2,96,7.2S48.2,25,0.5,25" />
+                    <rect y="25" class="st0" width="764" height="83.8" />
+                </g>
+            </g>
+        </svg>
+
+        <svg class="wave-4" version="1.1" id="Ebene_2_00000023994356195402159460000012843433409337631111_"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 764.5 108.8" style="enable-background:new 0 0 764.5 108.8;" xml:space="preserve">
+            <style type="text/css">
+                .st0 {
+                    fill: #EB5D0B;
+                }
+            </style>
+            <g id="Ebene_1-2">
+                <g>
+                    <path class="st0" d="M764.5,25C716.8,25,716.8,7.2,669,7.2S621.2,25,573.5,25S525.8,7.2,478,7.2S430.2,25,382.5,25
+			S334.8,7.2,287,7.2S239.2,25,191.5,25C143.8,25,143.8,7.2,96,7.2S48.2,25,0.5,25" />
+                    <rect y="25" class="st0" width="764" height="83.8" />
+                </g>
+            </g>
+        </svg>
+
+    </div>
+
 
 </body>
-
-<script>
-    const canvas = document.querySelector('canvas')
-    const c = canvas.getContext('2d')
-    canvas.width = innerWidth
-    canvas.height = innerHeight
-    
-    const wave = {
-        offset: 400,
-        speed: 0.2,
-        amplitude: 2,
-        frequency: 5,
-    } 
-    
-    var disFreq = wave.frequency, disFreqChase = 0;
-    var disAmp = wave.amplitude, disAmpChase = 0;
-    var disY = wave.offset, disYChase = 0;
-    var disSp = wave.speed, disSpChase = 0;
-
-    const strokeColor = { width: 0, h: 200, s: 50, l: 50, a: 0 }
-    const backgroundColor = { r: 192, g: 213, b: 180, a: 1 }
-
-    let increment = 0
-
-    function drawSineWave() {
-
-        // smooth out changes
-        disFreq += disFreqChase = (disFreqChase += (wave.frequency - disFreq) * 0.2) * 0.2;
-        disAmp += disAmpChase = (disAmpChase += (wave.amplitude - disAmp) * 0.2) * 0.2;
-        disY += disYChase = (disYChase += (wave.offset - disY) * 0.2) * 0.2;
-        disSp += disSpChase = (disSpChase += (wave.speed - disSp) * 0.2) * 0.2;
-
-        c.lineWidth = strokeColor.width;
-        c.fillStyle = `rgba(${backgroundColor.r},${backgroundColor.g},${backgroundColor.b},${backgroundColor.a})`
-        c.clearRect(0, 0, canvas.width, canvas.height)
-        //increment++
-
-        increment += (disSp / 60);
-        c.beginPath()
-        const h = canvas.height;
-        for (let i = 0; i < canvas.width; i++) {
-            const a = (disAmp / 200) * h;
-            const x = ((i / canvas.width) * disFreq) % 1 + increment;
-            const p = x * Math.PI * 2;
-            c.lineTo(i, disY + Math.sin(p) * a);
-        }
-
-        c.strokeStyle = `rgba(${backgroundColor.r},${backgroundColor.g},${backgroundColor.b},${backgroundColor.a})`
-        c.stroke()
-        c.lineTo(canvas.width, canvas.height)
-        c.lineTo(0, canvas.height)
-        c.fill()
-    }
-
-
-    function animate() {
-
-        requestAnimationFrame(animate)
-        drawSineWave()
-
-    }
-
-    animate()
-</script>
 
 </html>
